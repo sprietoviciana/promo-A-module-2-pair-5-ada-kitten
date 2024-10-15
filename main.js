@@ -50,3 +50,12 @@ const kittenThree = `<li class="card">
 </li>`;
 
 list.innerHTML = kittenOne + kittenTwo + kittenThree;
+
+const addCat = document.querySelector(".js-btn-add");
+const newForm = document.querySelector(".new-form");
+
+addCat.addEventListener("click", () => {
+  const collapse = document.querySelector(".collapse");
+  newForm.innerHTML = 
+  console.log("la usuaria hace click")
+})
