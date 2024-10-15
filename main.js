@@ -55,7 +55,6 @@ const addCat = document.querySelector(".js-btn-add");
 const newForm = document.querySelector(".new-form");
 
 addCat.addEventListener("click", () => {
-  const collapse = document.querySelector(".collapse");
-  newForm.innerHTML = 
-  console.log("la usuaria hace click")
+  newForm.classList.remove("collapsed");
+  console.log("la usuaria hace click");
 })
