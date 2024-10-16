@@ -57,4 +57,16 @@ const newForm = document.querySelector(".new-form");
 addCat.addEventListener("click", () => {
   newForm.classList.remove("collapsed");
   console.log("la usuaria hace click");
-})
+});
+
+const buttonsearch = document.querySelector(".js_button-search");
+const input = document.querySelector(".js_in_search_desc");
+
+buttonsearch.addEventListener("click", (event) => {
+  event.preventDefault();
+  const descriptionInput = input.value;
+  if (kittenOne.includes(descriptionInput)) {
+    list.contain(kittenOne);
+  }
+  console.log("gatito")
+});
