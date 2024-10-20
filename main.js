@@ -63,25 +63,33 @@ list.innerHTML = kittenOne + kittenTwo + kittenThree;
 const addCat = document.querySelector(".js-btn-add");
 const newForm = document.querySelector(".new-form");
 
-
+addCat.addEventListener("click", () => {
+  newForm.classList.toggle("collapsed");
+});
 
 const buttonsearch = document.querySelector(".js_button-search");
 const input = document.querySelector(".js_in_search_desc");
 
-if (input.includes(kittenDesc1)) {
-  buttonsearch.addEventListener("click", (event) => {
-    event.preventDefault();
-    const descriptionInput = input.value;
-    list.innerHTML = kittenOne;
-  });
-  list.innerHTML = kittenOne + kittenTwo + kittenThree;
-}
+buttonsearch.addEventListener("click", (event) => {
+  event.preventDefault();
+  const descriptionInput = input.value;
+  list.innerHTML = "";
+  if (kittenDesc1.includes(descriptionInput)) {
+    list.innerHTML = list.innerHTML + kittenOne;
+  }
+
+  if (kittenDesc2.includes(descriptionInput)) {
+    list.innerHTML = list.innerHTML + kittenTwo;
+  }
+
+  if (kittenDesc3.includes(descriptionInput)) {
+    list.innerHTML = list.innerHTML + kittenThree;
+  }
+});
 
 function showNewCatForm() {
   newForm.classList.remove("collapsed");
-  addCat.addEventListener("click", () => {
-
-  });
+  addCat.addEventListener("click", () => {});
 }
 
 function hideNewCatForm() {
