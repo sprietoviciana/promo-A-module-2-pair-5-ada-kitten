@@ -70,31 +70,22 @@ addCat.addEventListener("click", () => {
 const buttonsearch = document.querySelector(".js_button-search");
 const input = document.querySelector(".js_in_search_desc");
 
-buttonsearch.addEventListener("click", (event) => {
+function filterKiteen(event) {
   event.preventDefault();
   const descriptionInput = input.value;
   list.innerHTML = "";
   if (kittenDesc1.includes(descriptionInput)) {
-    list.innerHTML = list.innerHTML + kittenOne;
+    list.innerHTML += kittenOne;
   }
 
   if (kittenDesc2.includes(descriptionInput)) {
-    list.innerHTML = list.innerHTML + kittenTwo;
+    list.innerHTML += kittenTwo;
   }
 
   if (kittenDesc3.includes(descriptionInput)) {
-    list.innerHTML = list.innerHTML + kittenThree;
+    list.innerHTML += kittenThree;
   }
-});
-
-function showNewCatForm() {
-  newForm.classList.remove("collapsed");
-  addCat.addEventListener("click", () => {});
 }
 
-function hideNewCatForm() {
-  newForm.classList.add("collapsed");
-}
+buttonsearch.addEventListener("click", filterKiteen);
 
-buttonsearch.addEventListener("click", showNewCatForm);
-console.log("showNewCatForm");
